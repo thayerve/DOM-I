@@ -137,4 +137,4 @@ let donateLink = document.createElement('a');
 donateLink.href = "#";
 donateLink.textContent = 'DONATE';
 donateLink.style.color = 'green';
-nav.prepend(donateLink);
+nav.prepend(donateLink)
