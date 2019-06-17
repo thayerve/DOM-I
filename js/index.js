@@ -113,3 +113,28 @@ contacte.textContent = siteContent['contact']['email'];
 // populate footer
 let footerc = document.querySelector('footer p');
 footerc.textContent = siteContent['footer']['copyright'];
+
+
+/////////////////
+// New Content //
+/////////////////
+
+// Change nav text color to green
+
+navItems.forEach(element =>
+  element.style.color = 'green'
+);
+
+// Add 2 more links to the nav using appendChild and prepend
+let nav = document.querySelector('header nav');
+let blogLink = document.createElement('a');
+blogLink.href = "#";
+blogLink.textContent = 'BLOG';
+blogLink.style.color = 'green';
+nav.appendChild(blogLink);
+
+let donateLink = document.createElement('a');
+donateLink.href = "#";
+donateLink.textContent = 'DONATE';
+donateLink.style.color = 'green';
+nav.prepend(donateLink);
