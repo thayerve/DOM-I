@@ -46,6 +46,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 ////////////////////////////////////////
 
 // populate nav link text 
+let nav = document.querySelector('nav')
 let navLinks = document.querySelectorAll("nav a");
 
 navLinks[0].textContent = siteContent.nav['nav-item-1']
@@ -134,9 +135,32 @@ copyright.textContent = siteContent['footer']['copyright']
 ////////////////////////////////////////
 
 // change nav text to green
+navLinks.forEach(element => {
+  element.style.color = 'green'})
 
 
 // Utilize .appendChild() and .prepend() to add two new items to the nav
+let navBlog = document.createElement('a')
+navBlog.textContent = 'BLOG'
+navBlog.style.color = 'green'
+let navDonate = document.createElement('a')
+navDonate.innerHTML = 'DONATE'
+navDonate.style.color = 'green'
+nav.prepend(navBlog)
+nav.appendChild(navDonate)
 
+navBlog.setAttribute('href', 'https://www.livejournal.com')
+navDonate.href = 'https://www.kickstarter.com'
 
 // integrate a button that can update content on the site with a click of a button. You could build a similar data object with new values to help you test the click event.
+
+let newButton = document.createElement('button')
+newButton.textContent = 'Update Services'
+newButton.onclick = function(){
+  let newServices = prompt('What services should we offer?');
+  servicesP.textContent = newServices;
+}
+
+ctaText.appendChild(newButton)
+
+// the above added a new button below the CTA button that, when clicked, prompts the user to answer what services we should offer, and makes their answer the new content of the "Services" paragraph in the bottom-content section.
