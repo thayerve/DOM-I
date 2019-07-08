@@ -41,9 +41,9 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-///////////////////////////////////////
+////////////////////////////////////////
 // A. POPULATE PAGE CONTENT FROM JSON //
-///////////////////////////////////////
+////////////////////////////////////////
 
 // populate nav link text 
 let navLinks = document.querySelectorAll("nav a");
@@ -70,3 +70,73 @@ ctaImg.src = siteContent.cta['img-src']
 
 // populate main content section
 // // define variables
+let mainContent = document.querySelector('.main-content')
+let topContent = document.querySelector('.top-content') 
+let features = topContent.querySelector(':first-child')
+//console.log('features ' + features)
+let featuresH = features.querySelector('h4')
+let featuresP = features.querySelector('p')
+let about = topContent.querySelector('div:last-of-type')
+// console.log('about ' + about)
+let aboutH = about.querySelector('h4')
+let aboutP = about.querySelector('p')
+let middleImg = document.querySelector('#middle-img')
+let bottomContent = document.querySelector('.bottom-content')
+let services = bottomContent.querySelector(':first-child')
+let servicesH = services.querySelector('h4')
+let servicesP = services.querySelector('p')
+let product = bottomContent.querySelector('div :nth-of-type(2)')
+// console.log('product ' + product)
+let productH = product.querySelector('h4')
+let productP = product.querySelector('p')
+let vision = bottomContent.querySelector('div:last-of-type')
+let visionH = vision.querySelector('h4')
+let visionP = vision.querySelector('p')
+
+// // match variables to content in JSON
+featuresH.textContent = siteContent['main-content']['features-h4']
+featuresP.textContent = siteContent['main-content']['features-content']
+
+aboutH.textContent = siteContent['main-content']['about-h4']
+aboutP.textContent = siteContent['main-content']['about-content']
+
+middleImg.src = siteContent['main-content']['middle-img-src']
+
+servicesH.textContent = siteContent['main-content']['services-h4']
+servicesP.textContent = siteContent['main-content']['services-content']
+
+productH.textContent = siteContent['main-content']['product-h4']
+productP.textContent = siteContent['main-content']['product-content']
+
+visionH.textContent = siteContent['main-content']['vision-h4']
+visionP.textContent = siteContent['main-content']['vision-content']
+
+// populate contact section + footer
+// // set variables
+
+let contactH = document.querySelector('.contact h4')
+let contactInfo = document.querySelectorAll('.contact p')
+let contactAddr = contactInfo[0]
+let contactPh = contactInfo[1]
+let contactEm = contactInfo[2]
+let copyright = document.querySelector('footer p')
+
+// // match variables to content in JSON
+contactH.textContent = siteContent.contact['contact-h4']
+contactAddr.textContent = siteContent.contact['address']
+contactPh.textContent = siteContent.contact['phone']
+contactEm.textContent = siteContent.contact['email']
+copyright.textContent = siteContent['footer']['copyright']
+
+
+////////////////////////////////////////
+// B. CHANGE STYLES & ADD NEW CONTENT //
+////////////////////////////////////////
+
+// change nav text to green
+
+
+// Utilize .appendChild() and .prepend() to add two new items to the nav
+
+
+// integrate a button that can update content on the site with a click of a button. You could build a similar data object with new values to help you test the click event.
