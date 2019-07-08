@@ -40,3 +40,33 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+///////////////////////////////////////
+// A. POPULATE PAGE CONTENT FROM JSON //
+///////////////////////////////////////
+
+// populate nav link text 
+let navLinks = document.querySelectorAll("nav a");
+
+navLinks[0].textContent = siteContent.nav['nav-item-1']
+navLinks[1].textContent = siteContent.nav['nav-item-2']
+navLinks[2].textContent = siteContent.nav['nav-item-3']
+navLinks[3].textContent = siteContent.nav['nav-item-4']
+navLinks[4].textContent = siteContent.nav['nav-item-5']
+navLinks[5].textContent = siteContent.nav['nav-item-6']
+
+// populate CTA section
+// // define variables
+let cta = document.querySelector('.cta')
+let ctaText = document.querySelector('.cta-text')
+let ctaH = document.querySelector('.cta-text h1')
+let ctaButton = document.querySelector('.cta-text :last-child')
+let ctaImg = document.querySelector('#cta-img')
+
+// // match variables to content in JSON
+ctaH.textContent = siteContent.cta['h1']
+ctaButton.textContent = siteContent.cta['button']
+ctaImg.src = siteContent.cta['img-src']
+
+// populate main content section
+// // define variables
